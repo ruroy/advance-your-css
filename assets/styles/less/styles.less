@@ -3,3 +3,64 @@
  * @author: Jack Armley
  * @version: 1.0
  */
+
+//1. LESS colour variables
+
+@brightYellow: #FFDE17;
+@burntOrange: #F15A29;
+@brightRed: #EF4136;
+@rustyRed: #BE1E2D;
+@white: #fff;
+@black: #000;
+
+//2. Custom fonts
+
+@font-face {
+    font-family: 'jennasueregular';
+    src: url('../fonts/jenna-sue/jennasue-webfont.woff2') format('woff2'),
+         url('../fonts/jenna-sue/jennasue-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+//3. Normalize styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//4. Typography
+html {
+  // target / context * 100
+  // 10 (font size I want) / context (16 px base) * 100
+  font-size: 62.5%
+}
+body {
+  // set em at 16 px
+  font-size: 160%;
+  font-family: 'jennasueregular';
+}
+//5. Components
+
+//6. Postcards
+.postcard {
+  max-width: 96rem;
+  margin-left: auto;
+  margin-right: auto;
+  //6a. Outer styles
+  &-section {
+    padding: 2rem;
+    //6b. Front
+    &--header {
+      background-image: url("../images/tropical-island-bg.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
+
+
+
+//6c. Back
+//6d. 3d flip styles
