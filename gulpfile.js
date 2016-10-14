@@ -28,7 +28,7 @@ gulp.task('styles', function(){
     return gulp.src(assets.styles + '/less/**/*.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ],
-      compress: true
+      compress: false
     }))
     .pipe(gulp.dest(assets.styles));
 });

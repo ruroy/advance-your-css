@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    
+
   <!-- Page head
        The user doesn't see these elements (aside from the title)
        1. Title
@@ -18,6 +18,16 @@
   -->
   <body>
 
+  <!-- Reference svg files for <use> -->
+  <div class="svg-refs">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+        <symbol id="sun">
+          <path fill="#000" d="M47.3 31.5L42.6 25l4.7-6.5c.2-.2.2-.5.1-.8-.1-.3-.2-.4-.5-.5l-7.7-2.5V6.6c0-.3-.1-.5-.3-.7-.3-.2-.5-.2-.8-.1l-7.7 2.5-4.7-6.5c-.2-.2-.4-.3-.7-.3-.3 0-.5.1-.7.3l-4.7 6.5-7.7-2.5c-.2-.1-.5-.1-.8.1-.2.2-.3.4-.3.7v8.1l-7.7 2.5c-.3.1-.5.3-.5.5-.1.3-.1.5.1.8L7.4 25l-4.7 6.5c-.2.2-.2.5-.1.8.1.3.2.4.5.5l7.7 2.5v8.1c0 .3.1.5.3.7.3.2.5.2.8.1l7.7-2.5 4.7 6.5c.2.2.4.3.7.3.3 0 .5-.1.7-.3l4.7-6.5 7.7 2.5c.2.1.5.1.8-.1.2-.2.3-.4.3-.7v-8.1l7.7-2.5c.3-.1.5-.3.5-.5.1-.3.1-.6-.1-.8zm-8.3-.6c-.8 1.9-1.9 3.5-3.2 4.8-1.4 1.4-3 2.4-4.8 3.2-1.9.8-3.8 1.2-5.9 1.2-2.1 0-4-.4-5.9-1.2-1.9-.8-3.5-1.9-4.8-3.2-1.4-1.4-2.4-3-3.2-4.8-1-1.9-1.4-3.9-1.4-5.9 0-2.1.4-4 1.2-5.9.8-1.9 1.9-3.5 3.2-4.8 1.4-1.4 3-2.4 4.8-3.2 1.9-.8 3.8-1.2 5.9-1.2 2.1 0 4 .4 5.9 1.2 1.9.8 3.5 1.9 4.8 3.2 1.4 1.4 2.4 3 3.2 4.8.8 1.9 1.2 3.8 1.2 5.9.2 2-.2 4-1 5.9z"/>
+          <circle fill="#000" cx="25" cy="25" r="12.8"/>
+        </symbol>
+      </svg>
+    </div>
+
     <!-- Virtual postcard -->
     <article class="postcard">
 
@@ -27,20 +37,25 @@
         <header class="postcard-section postcard-section--header">
 
           <!-- Header group -->
-          <div class="postcard-section-headergroup"> 
+          <div class="postcard-section-headergroup">
 
-            <!-- Title -->       
+            <!-- Title -->
             <h1 class="postcard-section-title">Greetings from A tropical island!</h1>
 
-            <!-- Avatar image 
+            <!-- Avatar image
                  Uses srcset to provide images for both regular
                  and high-density displays
             -->
-            <img 
-              src="./assets/images/avatar.jpg" 
-              srcset="/assets/images/avatar.jpg 1x, 
-                      /assets/images/avatar-2x.jpg 2x"
-              alt="Picture of Jack Armley holding a kitten wearing a black beanie " />
+            <figure class="postcard-avatar">
+              <img class="postcard-avatar-image"
+                src="./assets/images/avatar.jpg"
+                srcset="/assets/images/avatar.jpg 1x,
+                        /assets/images/avatar-2x.jpg 2x"
+                alt="Picture of Jack Armley holding a kitten wearing a black beanie " />
+              <svg class="postcard-avatar-bg" viewBox="0 0 50 50">
+                <use xlink:href="#sun"/>
+              </svg>
+            </figure>
 
           </div>
 

@@ -13,6 +13,11 @@
 @white: #fff;
 @black: #000;
 
+@mobile: unit(320/16, em);
+@smallTablet: unit(492/16, em);
+@largeTablet: unit(746/16, em);
+@desktop: unit(960/16, em);
+
 //2. Custom fonts
 
 @font-face {
@@ -21,7 +26,6 @@
          url('../fonts/jenna-sue/jennasue-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 //3. Normalize styles
@@ -29,6 +33,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.svg-refs {
+  display: none;
+}
+
+svg * {
+  fill: inherit;
 }
 //4. Typography
 html {
@@ -46,21 +58,58 @@ body {
 //6. Postcards
 .postcard {
   max-width: 96rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 20px;
+
+  &-avatar {
+    position: relative;
+    width: 20rem;
+    @media screen and(min-width: @largeTablet){
+      width: 29.5rem;
+    }
+
+    &-bg {
+      use {
+        fill: #FFD700;
+      }
+    }
+
+    &-image {
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @imageSize: 13rem;
+      margin: -@imageSize/2 0 0 -@imageSize/2;
+      width: @imageSize;
+      height: @imageSize;
+      @media screen and(min-width: @largeTablet){
+        width: 20rem;
+        height: 20rem;
+        margin: -20/2rem 0 0 -20/2rem;
+      }
+    }
+  }
   //6a. Outer styles
   &-section {
     padding: 2rem;
+
     //6b. Front
     &--header {
+      display: flex;
+      justify-content: center;
       background-image: url("../images/tropical-island-bg.jpg");
       background-position: center;
       background-size: cover;
+    }
+
+    //6c. Back
+    &--message {
+      background: url("../images/back-pattern.svg");
     }
   }
 }
 
 
 
-//6c. Back
+
 //6d. 3d flip styles
